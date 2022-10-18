@@ -33,7 +33,11 @@ public class Geo {
 			//calculate the area of the triangle
 			float triangleArea = ( base * height ) / 2;	
 
-			System.out.println("The area of the triangle is => " + triangleArea);	
+			//return the result to the user
+
+			System.out.println("The area of the triangle is => " + triangleArea);
+
+			//ask if the user wants to go again	
 
 			System.out.println("To find another shapes area, enter '1' ");
 			int reChoice = scan.nextInt();
@@ -44,11 +48,21 @@ public class Geo {
 			
 		}else if(choice == 2){
 			System.out.println("Please enter the value of one side of the square.");
+
+			//get the value of one of the side of the square 
+
 			Scanner scan2 = new Scanner(System.in);
 			float square = scan2.nextFloat();
+
+			//to get the area , multiply the sides 
+
 			float squareArea = square * square;
 
+			//display the result to the user
+
 			System.out.println("The area of the square is => " + squareArea);
+
+			//ask if the user wants to go again	
 
 			System.out.println("To find another shapes area, enter '1' ");
 			int reChoice = scan.nextInt();
@@ -60,6 +74,9 @@ public class Geo {
 		}else if(choice == 3){
 
 			System.out.println("Please enter the value of the length and the width of the rectangle.");
+
+			//to calculate the rectangle area , get the lenght and the width of the rectangle
+
 			System.out.print("Length => ");
 			Scanner scan5 = new Scanner(System.in);
 			float length = scan5.nextFloat();
@@ -68,9 +85,15 @@ public class Geo {
 			Scanner scan6 = new Scanner(System.in);
 			float width = scan6.nextFloat();
 
+			//multiply the length and width to get the area
+
 			float rectangleArea = length * width ; 
 
+			//display the result to the user
+
 			System.out.println("The area of the square is => " + rectangleArea);
+
+			//ask if the user wants to go again	
 
 			System.out.println("To find another shapes area, enter '1' ");
 			int reChoice = scan.nextInt();
@@ -83,6 +106,9 @@ public class Geo {
 		}else if(choice == 4){
 
 			System.out.println("Please enter the base and height value of the parallelogram =>");
+
+			//to get the area of the parallelogram , get the base and height value of it
+
 			System.out.print("Base => ");
 			Scanner scan7 = new Scanner(System.in);
 			float pBase = scan7.nextFloat();
@@ -91,9 +117,15 @@ public class Geo {
 			Scanner scan8 = new Scanner(System.in);
 			float pHeight = scan8.nextFloat();
 
+			//multiply the base with the height to get the area
+
 			float parallelogramArea = pBase * pHeight ;	
 
+			//return the result to the user
+
 			System.out.println("The area of the parallelogram is => " + parallelogramArea);
+
+			//ask if the user wants to go again	
 
 			System.out.println("To find another shapes area, enter '1' ");
 			int reChoice = scan.nextInt();
@@ -103,6 +135,8 @@ public class Geo {
 			}
 
  		}else if(choice == 5){
+
+			//to get the trapezoid area, promt the user to enter the bottom base top base and the height
 
 			System.out.println("Please enter the bottom base, top base, and height value of the trapezoid =>");
 			System.out.print("Top Base => ");
@@ -117,10 +151,15 @@ public class Geo {
 			Scanner scan10 = new Scanner(System.in);
 			float tHeight = scan10.nextFloat();
 
+			//add the bottombase to the top base and divide it by 2 and then multiply it with the height to get the trapezoid area
 
 			float trapezoidArea = (( bottomBase + topBase ) / 2 )* tHeight ;	
 
+			//return the result to the user
+
 			System.out.println("The area of the trapezoid is => " + trapezoidArea);
+
+			//ask if the user wants to go again	
 
 			System.out.println("To find another shapes area, enter '1' ");
 			int reChoice = scan.nextInt();

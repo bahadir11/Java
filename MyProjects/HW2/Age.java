@@ -30,7 +30,7 @@ public class Age {
 		//Calculate at which age the famous person made the quote
 		int age = quoteYear - birthYear;
 		//Merge the name, surname and the quote with the new found age the famous person said
-		System.out.println(name + " said: '" + quote + "' when he was " + age + " years old.");
+		System.out.println(name + " said: \"" + quote + "\" when he was " + age + " years old.");
 		
 		
 
