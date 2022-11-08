@@ -1,18 +1,39 @@
+/*
+ * This program gets three fractional numbers from the user and 
+ * calculates if they are equal or greater than eachother
+ * the program uses addition subtraction division and multiplication on these
+ * three numbers with eachother and displays the results
+ * 
+ * Author: Bahadır
+ * 
+ */
+
+
+
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
 public class FractionalNumbers {
     
     public static void main(String[] args){
+
+        //to get short numbers use the decimal format 
+        
         DecimalFormat format = new DecimalFormat("0.##");
+        //to get input from the user create a new scanner obj
 
         Scanner scan = new Scanner(System.in);
+        //prompt the user to enter the fractional numbers
         System.out.print("Please enter the first fractional number in string representation ==> ");
+        //get the number
         String firstNumber = scan.nextLine();
+        //to get the number in a/b form only get the 0 and 2 index
         char firstOne = firstNumber.charAt(0);
         char secondOne = firstNumber.charAt(2);
+        //initialize the first and second values
         double firstValue = 0;
         double secondValue = 0;
+        //convert the char value to the decimal values
         if(firstOne == 48){
             firstValue = 0;
         }else if(firstOne == 49){
@@ -55,16 +76,20 @@ public class FractionalNumbers {
         }else if(secondOne == 57){
             secondValue = 9;
         }
+        //to shorten the double numbers  use the decimal format
         String first1Value = format.format(firstValue);
         firstValue = Double.parseDouble(first1Value);        
         String first2Value = format.format(secondValue);
         secondValue = Double.parseDouble(first2Value);
-
+        //the first number is equal to the entered values divided with eachother
         double fistNumber = firstValue / secondValue;
-        System.out.println("" + fistNumber + " "+  firstOne + secondOne);
 
         double theFirstValues = firstValue;
         double theSecondValues = secondValue; 
+        //to simplify the fractional numbers use a while loop and subtract 
+        //the value of the second one from the first if the first one is 
+        //bigger and do the same to the second value as well to achieve the
+        //simplified matter of numbers
  
         while (firstValue != secondValue){
           if(firstValue > secondValue)
@@ -72,7 +97,7 @@ public class FractionalNumbers {
           else
              secondValue = secondValue - firstValue;
         }      
- 
+        //to get the simplified number as a string, assign a variable to do it
        double firstSimplify = theFirstValues / firstValue ;
        double SecondSimplify = theSecondValues / firstValue ;
        String totalFirstSimplify = firstSimplify + "/" + SecondSimplify;
@@ -80,10 +105,13 @@ public class FractionalNumbers {
         //get the second fractional number
         System.out.print("Please enter the first fractional number in string representation ==> ");
         String secondNumber = scan.nextLine();
+        //to get the number in a/b form only get the 0 and 2 index
         char firstTwo = secondNumber.charAt(0);
         char secondTwo = secondNumber.charAt(2);
+        //initialize the first and second values
         double firstTwoValue = 0;
         double secondTwoValue = 0;
+        //get the decimal value by using the char value and converting the values
         if(firstTwo == 48){
             firstTwoValue = 0;
         }else if(firstTwo == 49){
@@ -126,17 +154,23 @@ public class FractionalNumbers {
         }else if(secondTwo == 57){
             secondTwoValue = 9;
         }
+        //to shorten the numbers use the decimal format 
         String first2TwoValue = format.format(firstTwoValue);
         firstTwoValue = Double.parseDouble(first2TwoValue);
         String second2TwoValue = format.format(secondTwoValue);
         secondTwoValue = Double.parseDouble(second2TwoValue);
-
+        
         double second2Number = firstTwoValue / secondTwoValue;
         String secondddddd = format.format(second2Number);
         second2Number = Double.parseDouble(secondddddd);
 
         double theFirst2Values = firstTwoValue;
         double theSecond2Values = secondTwoValue; 
+        //to simplify the fractional numbers use a while loop and subtract 
+        //the value of the second one from the first if the first one is 
+        //bigger and do the same to the second value as well to achieve the
+        //simplified matter of numbers
+ 
  
         while (firstTwoValue != secondTwoValue){
           if(firstTwoValue > secondTwoValue)
@@ -144,7 +178,7 @@ public class FractionalNumbers {
           else
              secondTwoValue = secondTwoValue - firstTwoValue;
         }      
- 
+        //to get the simplified number as a string, use the assignment operator to do it
        double first2Simplify = theFirst2Values / firstTwoValue ;
        double Second2Simplify = theSecond2Values / firstTwoValue ;
        String totalSecondSimplify = first2Simplify + "/" + Second2Simplify;
@@ -153,10 +187,25 @@ public class FractionalNumbers {
 
         System.out.print("Please enter the third fractional number in numerator and denominator form ==> ");
         String twoNumbers = scan.nextLine();
-        char firstOfTwoNumbers = twoNumbers.charAt(0);
-        char secondOfTwoNumbers = twoNumbers.charAt(1);
+        //get the first number at index 1
+        int a =  twoNumbers.charAt(1);
+        //initialize the first and second numbers
+        char firstOfTwoNumbers = 0;
+        char secondOfTwoNumbers = 0;
+        //to also get negative numbers, use an if else statement to determine
+        //it the char value of a = (-) so in that case we can use the number
+        //else if it is positive, the normal sequence occurs
+        
+        if(a == 45){
+            firstOfTwoNumbers = twoNumbers.charAt(0);
+            secondOfTwoNumbers = twoNumbers.charAt(2);
+        }else{
+            firstOfTwoNumbers = twoNumbers.charAt(0);
+            secondOfTwoNumbers = twoNumbers.charAt(1);
+        }
         double firstOfTwoNumbersValue = 0;
         double secondOfTwoNumbersValue = 0;
+        //convert the char values to decimal values
 
         if(firstOfTwoNumbers == 48){
             firstOfTwoNumbersValue = 0;
@@ -200,51 +249,94 @@ public class FractionalNumbers {
         }else if(secondOfTwoNumbers == 57){
             secondOfTwoNumbersValue = 9;
         }
+        //to shorten the numbers use the decimal format 
+        
         String firstOfTwoNumbersValue2 = format.format(firstOfTwoNumbersValue);
         firstOfTwoNumbersValue = Double.parseDouble(firstOfTwoNumbersValue2);
         String secondOfTwoNumbersValue2 = format.format(secondOfTwoNumbersValue);
-        secondOfTwoNumbersValue = Double.parseDouble(secondOfTwoNumbersValue2);
-
-        double thirdValue = firstOfTwoNumbersValue / secondOfTwoNumbersValue;
-
+        secondOfTwoNumbersValue = Double.parseDouble(secondOfTwoNumbersValue2); 
+        
+        double thirdValue = firstOfTwoNumbersValue /  secondOfTwoNumbersValue;
+        //if the value is negative, use an if statement to make it negative
+        if(a == 45){
+            thirdValue = - thirdValue;
+        }
         double theFirst22Values = firstOfTwoNumbersValue;
-        double theSecond22Values = secondOfTwoNumbersValue; 
+        double theSecond22Values = secondOfTwoNumbersValue;
+        
+        //to simplify the fractional numbers use a while loop and subtract 
+        //the value of the second one from the first if the first one is 
+        //bigger and do the same to the second value as well to achieve the
+        //simplified matter of numbers
  
-        while (firstOfTwoNumbersValue != secondOfTwoNumbersValue){
-          if(firstOfTwoNumbersValue > secondOfTwoNumbersValue)
-          firstOfTwoNumbersValue = firstOfTwoNumbersValue - secondOfTwoNumbersValue;
-          else
-          secondOfTwoNumbersValue = secondOfTwoNumbersValue - firstOfTwoNumbersValue;
-        }      
- 
-       double first22Simplify = theFirst22Values / firstOfTwoNumbersValue ;
-       double Second22Simplify = theSecond22Values / firstOfTwoNumbersValue ;
-       String totalThirdSimplify = first22Simplify + "/" + Second22Simplify;
+        while(firstOfTwoNumbersValue != secondOfTwoNumbersValue){
 
-        System.out.println(thirdValue);
+            if(firstOfTwoNumbersValue > secondOfTwoNumbersValue){
+                firstOfTwoNumbersValue = firstOfTwoNumbersValue - secondOfTwoNumbersValue;
+            }else{
+                secondOfTwoNumbersValue = secondOfTwoNumbersValue - firstOfTwoNumbersValue;
+        }
+    }     
 
+        
+         
+        //use a lot of decimal format to get the simple vesions of the two 
+        //numbers that construct the third value
+        String theFirst22Values1 = format.format(theFirst22Values);
+        theFirst22Values = Double.parseDouble(theFirst22Values1);
+        String theSecond22Values1 = format.format(theSecond22Values);
+        theSecond22Values = Double.parseDouble(theSecond22Values1);
+        double first22Simplify = theFirst22Values / firstOfTwoNumbersValue ;
+        double Second22Simplify = theSecond22Values / firstOfTwoNumbersValue ;
+        String totalThirdSimplify = first22Simplify + "/" + Second22Simplify;
+        String first22Simplify1 = format.format(first22Simplify);
+        first22Simplify = Double.parseDouble(first22Simplify1);
+        String second22Simplify1 = format.format(Second22Simplify);
+        Second22Simplify = Double.parseDouble(second22Simplify1);
+
+        //for the negative values, do the same
+        if(a == 45){
+        theSecond22Values = - theSecond22Values;
+        theFirst22Values1 = format.format(theFirst22Values);
+        theFirst22Values = Double.parseDouble(theFirst22Values1);
+        theSecond22Values1 = format.format(theSecond22Values);
+        theSecond22Values = Double.parseDouble(theSecond22Values1);
+        first22Simplify = theFirst22Values / firstOfTwoNumbersValue ;
+        Second22Simplify = theSecond22Values / firstOfTwoNumbersValue ;
+        totalThirdSimplify = first22Simplify + "/" + Second22Simplify;
+        first22Simplify1 = format.format(first22Simplify);
+        first22Simplify = Double.parseDouble(first22Simplify1);
+        second22Simplify1 = format.format(Second22Simplify);
+        Second22Simplify = Double.parseDouble(second22Simplify1);
+        Second22Simplify = - Second22Simplify;
+        }
+        
+        System.out.println();
+        
         //Calculate the outputs
         System.out.println("First fractional number is " + firstNumber +" and its double value is " + fistNumber);
         System.out.println("Second fractional number is " + secondNumber +" and its double value is " + second2Number);
         System.out.println("Third fractional number is " + firstOfTwoNumbers + "/" + secondOfTwoNumbers + " and its double value is " + thirdValue);
+        //display the simplified versions
+        System.out.println();
 
         System.out.println("First fractional number is" + firstNumber + "and its simplified version is " + totalFirstSimplify);
         System.out.println("Second fractional number is" + secondNumber + "and its simplified version is " + totalSecondSimplify);
         System.out.println("Third fractional number is" +  firstOfTwoNumbers + "/" + secondOfTwoNumbers +  "and its simplified version is " + totalThirdSimplify);
+        //compare the number by their greatness and display the results
+        System.out.println();
 
-        double finalThird = firstOfTwoNumbers / secondOfTwoNumbers;
-
-        if(finalThird > fistNumber){
+        if(thirdValue > fistNumber){
             System.out.println("The third number is greater than the first one.");
-        }else if(finalThird == fistNumber){
+        }else if(thirdValue == fistNumber){
             System.out.println("The third and first numbers are equal.");
         }else{
             System.out.println("The third number is greater than the first one.");
         }
 
-        if(finalThird > second2Number){
+        if(thirdValue > second2Number){
             System.out.println("The second number is greater than the third one.");
-        }else if(finalThird == second2Number){
+        }else if(thirdValue == second2Number){
             System.out.println("The second and third numbers are equal.");
         }else{
             System.out.println("The second number is greater than the third one.");
@@ -257,6 +349,49 @@ public class FractionalNumbers {
         }else{
             System.out.println("The second number is greater than the first one.");
         }
+
+        //addition
+        //to find the addition of the three numbers, do the math and display it
+        double oneplustwo = fistNumber + second2Number ; 
+        double oneplusthree = fistNumber + thirdValue ; 
+        double threeplustwo = thirdValue + second2Number ;
+        System.out.println();
+
+        System.out.println(totalFirstSimplify + " + " + totalSecondSimplify + " = " + oneplustwo);
+        System.out.println(totalFirstSimplify + " + " + totalThirdSimplify + " = " + oneplusthree);
+        System.out.println(totalThirdSimplify + " + " + totalSecondSimplify + " = " + threeplustwo);
+        System.out.println();
+
+        //subtraction
+        //do the math and display the results
+        double oneminustwo = fistNumber - second2Number ; 
+        double oneminusthree = fistNumber - thirdValue ; 
+        double threeminustwo = thirdValue - second2Number ; 
+        System.out.println(totalFirstSimplify + " - " + totalSecondSimplify + " = " + oneminustwo);
+        System.out.println(totalFirstSimplify + " - " + totalThirdSimplify + " = " + oneminusthree);
+        System.out.println(totalThirdSimplify + " - " + totalSecondSimplify + " = " + threeminustwo);
+        System.out.println();
+
+        //multiplication
+        //do the math and display the results
+        double onetimestwo = fistNumber * second2Number ; 
+        double onetimesthree = fistNumber * thirdValue ; 
+        double threetimestwo = thirdValue * second2Number ; 
+        System.out.println(totalFirstSimplify + " * " + totalSecondSimplify + " = " + onetimestwo);
+        System.out.println(totalFirstSimplify + " * " + totalThirdSimplify + " = " + onetimesthree);
+        System.out.println(totalThirdSimplify + " * " + totalSecondSimplify + " = " + threetimestwo);
+        System.out.println();
+
+        //division
+        //do the math and display the results
+        double onedivtwo = fistNumber / second2Number ; 
+        double onedivthree = fistNumber / thirdValue ; 
+        double threedivtwo = thirdValue / second2Number ; 
+        System.out.println(totalFirstSimplify + " / " + totalSecondSimplify + " = " + onedivtwo);
+        System.out.println(totalFirstSimplify + " / " + totalThirdSimplify + " = " + onedivthree);
+        System.out.println(totalThirdSimplify + " / " + totalSecondSimplify + " = " + threedivtwo);
+        System.out.println();
+        System.out.println("The first number is ==> " + fistNumber + "\nThe second number is ==> " + second2Number + "\n The third number is ==>  " + thirdValue);
 
 
 
