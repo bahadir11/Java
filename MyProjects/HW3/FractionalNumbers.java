@@ -96,14 +96,15 @@ public class FractionalNumbers {
              firstValue = firstValue - secondValue;
           else
              secondValue = secondValue - firstValue;
-        }      
+        }  
+        
         //to get the simplified number as a string, assign a variable to do it
        double firstSimplify = theFirstValues / firstValue ;
        double SecondSimplify = theSecondValues / firstValue ;
-       String totalFirstSimplify = firstSimplify + "/" + SecondSimplify;
+       String totalFirstSimplify = (int)firstSimplify + "/" + (int)SecondSimplify;    
 
         //get the second fractional number
-        System.out.print("Please enter the first fractional number in string representation ==> ");
+        System.out.print("Please enter the second fractional number in string representation ==> ");
         String secondNumber = scan.nextLine();
         //to get the number in a/b form only get the 0 and 2 index
         char firstTwo = secondNumber.charAt(0);
@@ -165,23 +166,34 @@ public class FractionalNumbers {
         second2Number = Double.parseDouble(secondddddd);
 
         double theFirst2Values = firstTwoValue;
-        double theSecond2Values = secondTwoValue; 
+        double theSecond2Values = secondTwoValue;
+        double first2Simplify =0;
+        double Second2Simplify =0; 
+        if(theSecond2Values != 0 ){
+            first2Simplify = theFirst2Values / firstTwoValue ;
+            Second2Simplify = theSecond2Values / firstTwoValue ;
+
+        }else{
+            first2Simplify = 0;
+            Second2Simplify = 0; 
+        }
         //to simplify the fractional numbers use a while loop and subtract 
         //the value of the second one from the first if the first one is 
         //bigger and do the same to the second value as well to achieve the
         //simplified matter of numbers
+
+        int firstOfTheSecondOneToPrint = (int)firstTwoValue;
+        int secondOfTheSecondOneToPrint = (int)secondTwoValue;
  
  
-        while (firstTwoValue != secondTwoValue){
+        while (firstTwoValue != secondTwoValue && firstTwoValue != 0){
           if(firstTwoValue > secondTwoValue)
              firstTwoValue = firstTwoValue - secondTwoValue;
           else
              secondTwoValue = secondTwoValue - firstTwoValue;
         }      
         //to get the simplified number as a string, use the assignment operator to do it
-       double first2Simplify = theFirst2Values / firstTwoValue ;
-       double Second2Simplify = theSecond2Values / firstTwoValue ;
-       String totalSecondSimplify = first2Simplify + "/" + Second2Simplify;
+       String totalSecondSimplify =firstOfTheSecondOneToPrint+ "/" + secondOfTheSecondOneToPrint;
 
         //get the third fractional number
 
@@ -254,9 +266,15 @@ public class FractionalNumbers {
         String firstOfTwoNumbersValue2 = format.format(firstOfTwoNumbersValue);
         firstOfTwoNumbersValue = Double.parseDouble(firstOfTwoNumbersValue2);
         String secondOfTwoNumbersValue2 = format.format(secondOfTwoNumbersValue);
-        secondOfTwoNumbersValue = Double.parseDouble(secondOfTwoNumbersValue2); 
+        secondOfTwoNumbersValue = Double.parseDouble(secondOfTwoNumbersValue2);
+        double thirdValue = 0;
+        if(firstOfTwoNumbersValue != 0 ) {
+            thirdValue = firstOfTwoNumbersValue /  secondOfTwoNumbersValue;
+        }else{
+            thirdValue = 0;
+        }
         
-        double thirdValue = firstOfTwoNumbersValue /  secondOfTwoNumbersValue;
+       
         //if the value is negative, use an if statement to make it negative
         if(a == 45){
             thirdValue = - thirdValue;
@@ -288,7 +306,7 @@ public class FractionalNumbers {
         theSecond22Values = Double.parseDouble(theSecond22Values1);
         double first22Simplify = theFirst22Values / firstOfTwoNumbersValue ;
         double Second22Simplify = theSecond22Values / firstOfTwoNumbersValue ;
-        String totalThirdSimplify = first22Simplify + "/" + Second22Simplify;
+        String totalThirdSimplify = (int)first22Simplify + "/" + (int)Second22Simplify;
         String first22Simplify1 = format.format(first22Simplify);
         first22Simplify = Double.parseDouble(first22Simplify1);
         String second22Simplify1 = format.format(Second22Simplify);
