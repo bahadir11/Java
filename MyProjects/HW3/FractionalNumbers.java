@@ -338,9 +338,9 @@ public class FractionalNumbers {
         //display the simplified versions
         System.out.println();
 
-        System.out.println("First fractional number is" + firstNumber + "and its simplified version is " + totalFirstSimplify);
-        System.out.println("Second fractional number is" + secondNumber + "and its simplified version is " + totalSecondSimplify);
-        System.out.println("Third fractional number is" +  firstOfTwoNumbers + "/" + secondOfTwoNumbers +  "and its simplified version is " + totalThirdSimplify);
+        System.out.println("First fractional number is " + firstNumber + " and its simplified version is " + totalFirstSimplify);
+        System.out.println("Second fractional number is " + secondNumber + " and its simplified version is " + totalSecondSimplify);
+        System.out.println("Third fractional number is " +  firstOfTwoNumbers + "/" + secondOfTwoNumbers +  " and its simplified version is " + totalThirdSimplify);
         //compare the number by their greatness and display the results
         System.out.println();
 
@@ -372,7 +372,8 @@ public class FractionalNumbers {
         //to find the addition of the three numbers, do the math and display it
         double oneplustwo = fistNumber + second2Number ; 
         double oneplusthree = fistNumber + thirdValue ; 
-        double threeplustwo = thirdValue + second2Number ;
+        double threeplustwo = thirdValue + second2Number ;  
+
         System.out.println();
 
         System.out.println(totalFirstSimplify + " + " + totalSecondSimplify + " = " + oneplustwo);
@@ -405,6 +406,10 @@ public class FractionalNumbers {
         double onedivtwo = fistNumber / second2Number ; 
         double onedivthree = fistNumber / thirdValue ; 
         double threedivtwo = thirdValue / second2Number ; 
+        if(second2Number == 0){
+            onedivtwo = 0;
+            threedivtwo = 0;
+        }
         System.out.println(totalFirstSimplify + " / " + totalSecondSimplify + " = " + onedivtwo);
         System.out.println(totalFirstSimplify + " / " + totalThirdSimplify + " = " + onedivthree);
         System.out.println(totalThirdSimplify + " / " + totalSecondSimplify + " = " + threedivtwo);
