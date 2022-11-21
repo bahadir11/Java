@@ -1,10 +1,13 @@
 public class EvaluateApplication1 {
     public EvaluateApplication1(double finalScore, double QuantativeScore, double englishScore,double gpa){
+        //if final score is not equal to 0 the student goes to highshcool
         if(finalScore != 0){
+        //create the tobb and bilkent school objects and give them parameters
             
         School tobb = new School("TOBB ETU", "Ankara",80,78,75,75);
             
         School bilkent = new School("Bilkent", "Ankara", 90, 93,75, 78);
+        //set the minimum entering scores to local variables
         int tobbMinCS = tobb.minimumUndergraduateComputerEngineeringScore; 
         int tobbMinEE = tobb.minimumUndergraduateElectronicEngineeringScore; 
         int tobbMinME = tobb.minimumUndergraduateMechanicalEngineeringScore; 
@@ -14,6 +17,7 @@ public class EvaluateApplication1 {
         int bilkentMinEE = bilkent.minimumUndergraduateElectronicEngineeringScore;
         int bilkentMinME = bilkent.minimumUndergraduateMechanicalEngineeringScore;
         int bilkentMinIE = bilkent.minimumUndergraduateIndustrialEngineeringScore;
+        //determine which undergraduate program did the person got accepted to and which ones rejected the student
         if(finalScore > tobbMinCS) {  
             System.out.println("You have been accepted to TOBB Computer Engineering.");
         }else{
