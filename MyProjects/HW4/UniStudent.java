@@ -1,4 +1,5 @@
 public class UniStudent {
+    //initialize the values to set parameters to
     String name;
     String surname;
     int age;
@@ -10,7 +11,8 @@ public class UniStudent {
     String schoolName;
     double gpa;
     public UniStudent(String name,String surname,int age,int mathSkill,int turkishSkill,int englishSkill,String schoolName,double gpa){
-    if (this.gpa > 4) {
+    
+        //set the parameters to the values that have been initialized
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -19,16 +21,7 @@ public class UniStudent {
         this.englishSkill = englishSkill;
         this.schoolName = schoolName;
         this.gpa = gpa;
-    }else {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.mathSkill = mathSkill;
-        this.turkishSkill = turkishSkill;
-        this.englishSkill = englishSkill;
-        this.schoolName = schoolName;
-        this.gpa = gpa;
-    }
+    
 
         
     }
